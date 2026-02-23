@@ -13,7 +13,7 @@ fi
 DATE=$(date +"%Y-%m-%d %H:%M:%S")
 
 # 1. Lynis Security Score med one-liner
-SCORE=$(sudo lynis audit system --quick | awk '/Hardening index/{print $3}')
+SCORE=$(sudo lynis audit system --quick | awk '/Hardening index/{print $4}') #$3 on Debian?
 if [ -z "$SCORE" ]; then
     SCORE=0
 fi
